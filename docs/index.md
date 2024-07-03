@@ -2,6 +2,8 @@
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
+起動コマンドは [mkdocs serveコマンドオプション](https://fig.io/manual/mkdocs/serve)
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
