@@ -12,11 +12,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12'
+          python-version: '3.12.4'
 
       - name: Install mkdocs and plugin
         run: pip install mkdocs-material mkdocs-exclude
