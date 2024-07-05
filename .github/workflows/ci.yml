@@ -32,7 +32,7 @@ jobs:
       - name: Prepare for deployment to GitHub Pages
         run: |
           mv site _site
-          cp -r .github/ISSUE_TEMPLATE _site/.github/
+          cp -r .github/ISSUE_TEMPLATE _site/.github/.ISSUE_TEMPLATE
 
       - name: Deploy to GitHub Pages
         env:
