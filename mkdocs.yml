@@ -28,5 +28,10 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
-exclude:
-  - '.github/'
+plugins:
+  - search
+  - exclude:
+      glob:
+        - .github/*
+      include:
+        - .github/ISSUE_TEMPLATE/**/*
