@@ -5,7 +5,7 @@ theme:
   palette:
     primary: cyan
   features:
-    - content.code.annotate 
+    - content.code.annotate
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -19,3 +19,14 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GradProjectHub/GradProject
+
+extra_css:
+  - stylesheets/extra.css
+
+exclude_docs:
+  - .github/
