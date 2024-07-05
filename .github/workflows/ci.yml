@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -26,9 +26,22 @@ jobs:
       - name: Show mkdocs.yml for debugging
         run: cat mkdocs.yml
 
+      - name: Build MkDocs site
+        run: mkdocs build --verbose
+
+      - name: Prepare for deployment to GitHub Pages
+        run: |
+          mv site _site
+          cp -r .github/ISSUE_TEMPLATE _site/.github/
+
       - name: Deploy to GitHub Pages
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          mkdocs build --verbose
-          mkdocs gh-deploy --force --verbose
+          cd _site
+          git init
+          git remote add origin https://github.com/${{ github.repository }}.git
+          git checkout -b gh-pages
+          git add .
+          git commit -m "Deploy with MkDocs"
+          git push --force origin gh-pages
