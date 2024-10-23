@@ -1,5 +1,7 @@
 docs/.obsidian/
 
+.env/
+
 .venv/
 
 site/
